@@ -13,7 +13,7 @@
 // from https://github.com/m5stack/M5StickC/blob/master/src/utility/MahonyAHRS.cpp
 
 #include <math.h>
-#include <M5StickC.h>
+#include <M5Unified.h>
 #include "MahonyAHRS.h"
 
 #define sampleFreq	200.0f			// sample frequency in Hz
@@ -22,6 +22,22 @@
 
 namespace imu {
 namespace mahony {
+
+//---------------------------------------------------------------------------------------------------
+// Fast inverse square-root
+// See: http://en.wikipedia.org/wiki/Fast_inverse_square_root
+
+float invSqrt(float x) {
+	float halfx = 0.5f * x;
+	float y = x;
+#pragma GCC diagnostic ignored "-Wstrict-aliasing"
+	long i = *(long*)&y;
+	i = 0x5f3759df - (i>>1);
+	y = *(float*)&i;
+#pragma GCC diagnostic warning "-Wstrict-aliasing"
+	y = y * (1.5f - (halfx * y * y));
+	return y;
+}
 
 volatile float twoKp = twoKpDef;											// 2 * proportional gain (Kp)
 volatile float twoKi = twoKiDef;											// 2 * integral gain (Ki)
@@ -108,21 +124,6 @@ void MahonyAHRS::QuaternionToEuler(float q0, float q1, float q2, float q3,  floa
     roll  *= RAD_TO_DEG;
 }
 
-//---------------------------------------------------------------------------------------------------
-// Fast inverse square-root
-// See: http://en.wikipedia.org/wiki/Fast_inverse_square_root
-
-float invSqrt(float x) {
-	float halfx = 0.5f * x;
-	float y = x;
-#pragma GCC diagnostic ignored "-Wstrict-aliasing"
-	long i = *(long*)&y;
-	i = 0x5f3759df - (i>>1);
-	y = *(float*)&i;
-#pragma GCC diagnostic warning "-Wstrict-aliasing"
-	y = y * (1.5f - (halfx * y * y));
-	return y;
-}
 
 } // mahony
 } // imu

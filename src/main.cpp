@@ -53,7 +53,8 @@ void UpdateLcd() {
 }
 
 void setup() {
-  M5.begin();
+  auto cfg = M5.config();
+  M5.begin(cfg);
   Serial.begin(115200);
   // read settings
   float gyroOffset[3] = { 0.0F };

@@ -18,6 +18,9 @@ namespace device_name {
             case m5gfx::board_t::board_M5StickCPlus:
                 concatDeviceName(DEVICE_NAME_M5STICK_CPLUS);
                 break;
+            case m5gfx::board_t::board_M5StickCPlus2:
+                concatDeviceName(DEVICE_NAME_M5STICK_CPLUS2);
+                break;
             case m5gfx::board_t::board_M5StackCoreInk:
                 concatDeviceName(DEVICE_NAME_M5STACK_COREINK);
                 break;

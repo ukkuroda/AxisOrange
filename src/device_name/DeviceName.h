@@ -12,6 +12,7 @@ namespace device_name {
 #define DEVICE_NAME_M5STACK_CORE2 "M5StackCore2"
 #define DEVICE_NAME_M5STICK_C "M5StickC"
 #define DEVICE_NAME_M5STICK_CPLUS "M5StickCPlus"
+#define DEVICE_NAME_M5STICK_CPLUS2 "M5StickCPlus2"
 #define DEVICE_NAME_M5STACK_COREINK "M5StackCoreInk"
 #define DEVICE_NAME_M5PAPER "M5Paper"
 #define DEVICE_NAME_M5TOUGH "M5Tough"

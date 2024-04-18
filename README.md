@@ -1,10 +1,30 @@
 AxisOrange
 ===
+# Warning!!
+
+!! This is a quick and dirty hack to run AxisOrange on M5StickCPlus2 !!
+
+Tested with 	
+
+ - m5stack/M5GFX@^0.1.15
+ - m5stack/M5Unified@^0.1.14
+
+Currently, PlatformIO does not support M5StickCPlus2 so you need to copy "m5stick-cplus2.json" to 
+
+ - Unix ~/.platformio
+ - Windows %HOMEPATH%\.platformio
+
+!! I just madeup this json from m5stick-cplus.json. so this json could be wrong. !!
+
+I hope this should build and works.
+
 
 # Overview
 <img src="https://user-images.githubusercontent.com/15327448/141321892-37214815-c0ff-4db5-9817-3dd100d4d2f2.png?raw=true" width="200" />
 
 M5Stack series firmware to send 6DOF sensor(SH200Q or MPU6886) data and quaternion by Bluetooth serial port protocol(SPP).
+
+
 
 <img src="https://github.com/naninunenoy/AxisOrange/blob/doc/doc/demo.gif?raw=true" width="200" />
 
