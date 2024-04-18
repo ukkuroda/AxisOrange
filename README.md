@@ -11,8 +11,8 @@ Tested with
 
 Currently, PlatformIO does not support M5StickCPlus2 so you need to copy "m5stick-cplus2.json" to 
 
- - Unix ~/.platformio
- - Windows %HOMEPATH%\.platformio
+ - Unix ~/.platformio/boards
+ - Windows %HOMEPATH%\.platformio\boards
 
 !! I just madeup this json from m5stick-cplus.json. so this json could be wrong. !!
 
